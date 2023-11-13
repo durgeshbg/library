@@ -26,8 +26,13 @@ function logBooks() {
         card.classList.add('card');
         for (const key in book) {
             if (key == 'hasRead') {
-                let content = book[key] ? 'read' : 'not read yet';
+                let content = book[key] ? 'not read yet' : 'read';
                 card.innerHTML += `<button class=${key}>has ${content}</button>`;
+                card.lastElementChild.addEventListener('click', (e) => {
+                    card.classList.toggle('read');
+                    book[key] = !book[key];
+                    e.target.textContent = book[key] ? 'not read yet' : 'read';
+                });
                 if (book[key]) card.classList.toggle('read');
             } else card.innerHTML += `<div class="${key}">${book[key]}</div>`;
         }
