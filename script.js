@@ -7,12 +7,7 @@ function Book(title, author, pages, hasRead) {
     this.hasRead = hasRead;
 }
 
-function addBookToLibrary() {
-    const book = new Book('Title', 'Book author', 76, true);
+function addBookToLibrary(title, author, pages, hasRead) {
+    const book = new Book(title, author, pages, hasRead);
     myLibrary.push(book);
-    myLibrary.forEach((book) => {
-        console.log(book.title);
-    });
-    console.log(myLibrary);
 }
-addBookToLibrary();
