@@ -25,7 +25,11 @@ function logBooks() {
         const card = document.createElement('div');
         card.classList.add('card');
         for (const key in book) {
-            card.innerHTML += `<div class="${key}">${book[key]}</div>`;
+            if (key == 'hasRead') {
+                let content = book[key] ? 'read' : 'not read yet';
+                card.innerHTML += `<button class=${key}>has ${content}</button>`;
+                if (book[key]) card.classList.toggle('read');
+            } else card.innerHTML += `<div class="${key}">${book[key]}</div>`;
         }
         container.appendChild(card);
     });
