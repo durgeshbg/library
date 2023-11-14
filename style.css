@@ -41,9 +41,15 @@ h1 {
     text-align: center;
     border-radius: 5px;
     width: 200px;
+    position: relative;
 }
 .card.read {
     background-color: var(--read);
+}
+.delete {
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }
 .card .title {
     font-size: 1.5rem;
