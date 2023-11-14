@@ -12,11 +12,27 @@
         sans-serif;
 }
 
+h1 {
+    text-align: center;
+    padding: 10px;
+}
+
+.add {
+    border: none;
+    background-color: #cd2e2e;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 1.2rem 1.5rem;
+}
+.add:hover {
+    background-color: rgb(210, 106, 106);
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    padding: 1.5rem;
+    margin: 0 1.5rem;
 }
 
 .card {
@@ -53,4 +69,62 @@
 }
 .card button:hover {
     background: #e5e5e5;
+}
+
+::backdrop {
+    background-color: rgba(100, 0, 0, 0.5);
+}
+dialog {
+    margin: auto;
+    border: none;
+    border-radius: 5px;
+    padding: 20px;
+    position: relative;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    align-items: center;
+    gap: 20px;
+}
+.close {
+    padding: 4px 6px;
+    position: absolute;
+    right: 20px;
+    border: none;
+    border-radius: 5px;
+}
+.form-row {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+input[type='text'],
+input[type='number'] {
+    width: 300px;
+    height: 30px;
+    padding-left: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: none;
+    border: 1px solid black;
+}
+label {
+    font-size: 18px;
+}
+button[type='submit'] {
+    width: 200px;
+    align-self: center;
+    background-color: skyblue;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 5px;
+    font-size: 18px;
+}
+button[type='submit']:hover {
+    background-color: rgb(77, 193, 238);
+}
+input:invalid + span::after {
+    content: '&#10060;';
 }
