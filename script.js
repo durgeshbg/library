@@ -21,6 +21,7 @@ function addBookToLibrary(title, author, pages, hasRead) {
 
 function logBooks() {
     const container = document.querySelector('.container');
+    container.innerHTML = '';
     myLibrary.forEach((book) => {
         const card = document.createElement('div');
         card.classList.add('card');
@@ -39,4 +40,32 @@ function logBooks() {
         container.appendChild(card);
     });
 }
+
+const dialog = document.querySelector('dialog');
+document
+    .querySelector('.add')
+    .addEventListener('click', () => dialog.showModal());
+document
+    .querySelector('.close')
+    .addEventListener('click', () => dialog.close());
+
+document.querySelector('form').addEventListener('submit', (e) => {
+    const formData = new FormData(e.target);
+    const book = {};
+    formData.forEach((value, key) => {
+        if (key == 'hasRead') book[key] = value == 'true' ? true : false;
+        book[key] = value;
+    });
+    addBookToLibrary(
+        book['title'],
+        book['author'],
+        book['pages'],
+        book['hasRead']
+    );
+    e.target.reset();
+    dialog.close();
+    logBooks();
+    e.preventDefault();
+});
+
 logBooks();
