@@ -1,11 +1,10 @@
 class Book {
     static myLibrary = [];
-    constructor(title, author, pages, hasRead) {
-        this.title = title[1];
-        this.author = author[1];
-        this.pages = pages[1];
-        if (hasRead != undefined) this.hasRead = true;
-        else this.hasRead = false;
+    constructor(title, author, pages, hasRead = false) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.hasRead = hasRead;
     }
     static addBookToLibrary(book) {
         this.myLibrary.push(book);
@@ -16,8 +15,14 @@ class Book {
 }
 
 function handleSubmit(e) {
-    const formData = new FormData(e.target);
-    const book = new Book(...formData);
+    let data = new FormData(e.target);
+    hasRead = data.get('hasRead') == 'true' ? true : false;
+    const book = new Book(
+        data.get('title'),
+        data.get('author'),
+        data.get('pages'),
+        hasRead
+    );
     Book.addBookToLibrary(book);
     e.target.reset();
     dialog.close();
@@ -42,7 +47,7 @@ function renderBooks() {
         for (let key in book) {
             if (key == 'hasRead') {
                 let content = book[key] ? 'not read yet' : 'read';
-                card.innerHTML += `<button class=${key}>has ${content}</button>`;
+                card.innerHTML += `<button class=${key}>${content}</button>`;
                 card.lastElementChild.addEventListener('click', (e) => {
                     card.classList.toggle('read');
                     book[key] = !book[key];
