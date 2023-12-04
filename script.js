@@ -1,33 +1,26 @@
-const myLibrary = [];
-
-function Book(title, author, pages, hasRead) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.hasRead = hasRead;
-}
-
-function addBookToLibrary(title, author, pages, hasRead) {
-    const book = new Book(title, author, pages, hasRead);
-    myLibrary.push(book);
+class Book {
+    static myLibrary = [];
+    constructor(title, author, pages, hasRead) {
+        this.title = title[1];
+        this.author = author[1];
+        this.pages = pages[1];
+        if (hasRead != undefined) this.hasRead = true;
+        else this.hasRead = false;
+    }
+    static addBookToLibrary(book) {
+        this.myLibrary.push(book);
+    }
 }
 
 function handleSubmit(e) {
     const formData = new FormData(e.target);
-    const book = {};
-    formData.forEach((value, key) => {
-        if (key == 'hasRead') book[key] = value == 'true' ? true : false;
-        book[key] = value;
-    });
-    addBookToLibrary(
-        book['title'],
-        book['author'],
-        book['pages'],
-        book['hasRead']
-    );
+    const book = new Book(...formData);
+    console.log(...formData);
+    console.log(book);
+    Book.addBookToLibrary(book);
     e.target.reset();
     dialog.close();
-    logBooks();
+    renderBooks();
     e.preventDefault();
 }
 
@@ -35,14 +28,14 @@ function deleteBook(e) {
     e.target.parentElement.remove();
 }
 
-function logBooks() {
+function renderBooks() {
     const container = document.querySelector('.container');
     container.innerHTML = '';
-    myLibrary.forEach((book) => {
+    Book.myLibrary.forEach((book) => {
         const card = document.createElement('div');
         card.classList.add('card');
         card.innerHTML = "<button class='delete'>&#x1F5D1;</button>";
-        for (const key in book) {
+        for (let key in book) {
             if (key == 'hasRead') {
                 let content = book[key] ? 'not read yet' : 'read';
                 card.innerHTML += `<button class=${key}>has ${content}</button>`;
@@ -68,4 +61,4 @@ document
     .addEventListener('click', () => dialog.close());
 
 document.querySelector('form').addEventListener('submit', handleSubmit);
-logBooks();
+renderBooks();
