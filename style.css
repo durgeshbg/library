@@ -1,4 +1,6 @@
 :root {
+    color: white;
+    background-color: black;
     --not-read: rgb(167, 212, 231);
     --read: rgb(167, 231, 186);
 }
