@@ -39,7 +39,7 @@ h1 {
     flex-wrap: wrap;
     gap: 10px;
     padding: 1.5rem;
-    border-top: 1px dashed black;
+    border-top: 5px solid white;
 }
 
 .card {
