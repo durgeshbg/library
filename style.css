@@ -20,13 +20,16 @@ h1 {
 
 .add {
     border: none;
-    background-color: #cd2e2e;
+    background-color: rgb(92, 196, 238);
     padding: 10px;
     border-radius: 5px;
     margin: 1.2rem 1.5rem;
+    font-size: 1rem;
+    transition: font-size 300ms ease-in-out;
 }
 .add:hover {
-    background-color: rgb(210, 106, 106);
+    background-color: skyblue;
+    font-size: 1.4rem;
 }
 
 .container {
