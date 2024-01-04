@@ -1,143 +1,142 @@
 :root {
-    color: white;
-    background-color: black;
-    --not-read: rgb(167, 212, 231);
-    --read: rgb(167, 231, 186);
+  color: white;
+  background-color: black;
+  --not-read: rgb(167, 212, 231);
+  --read: rgb(167, 231, 186);
 }
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-        Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
-        sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 h1 {
-    font-size: 5rem;
-    text-align: center;
-    padding: 10px;
+  font-size: 5rem;
+  text-align: center;
+  padding: 10px;
 }
 
 .add {
-    border: none;
-    background-color: rgb(92, 196, 238);
-    padding: 10px;
-    border-radius: 5px;
-    margin: 1.2rem 1.5rem;
-    font-size: 1rem;
-    transition: font-size 300ms ease-in-out;
+  border: none;
+  background-color: rgb(92, 196, 238);
+  padding: 10px;
+  border-radius: 5px;
+  margin: 1.2rem 1.5rem;
+  font-size: 1rem;
+  transition: font-size 300ms ease-in-out;
 }
 .add:hover {
-    background-color: skyblue;
-    font-size: 1.4rem;
+  background-color: skyblue;
+  font-size: 1.4rem;
 }
 
 .container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 1.5rem;
-    border-top: 5px solid white;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 1.5rem;
+  border-top: 5px solid white;
 }
 
 .card {
-    background-color: var(--not-read);
-    padding: 20px;
-    text-align: center;
-    border-radius: 5px;
-    width: 200px;
-    position: relative;
+  background-color: var(--not-read);
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  width: 200px;
+  position: relative;
 }
 .card.read {
-    background-color: var(--read);
+  background-color: var(--read);
 }
 .delete {
-    position: absolute;
-    right: 10px;
-    top: 10px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }
 .card .title {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
 }
 .card .author {
-    font-style: italic;
-    margin-bottom: 5px;
+  font-style: italic;
+  margin-bottom: 5px;
 }
 .card .author::before {
-    content: 'by ';
-    font-style: normal;
+  content: 'by ';
+  font-style: normal;
 }
 .card .pages::after {
-    content: ' pages';
+  content: ' pages';
 }
 .card button {
-    border: none;
-    padding: 8px;
-    margin-top: 8px;
-    border-radius: 5px;
-    background-color: #fff;
+  border: none;
+  padding: 8px;
+  margin-top: 8px;
+  border-radius: 5px;
+  background-color: #fff;
 }
 .card button:hover {
-    background: #e5e5e5;
+  background: #e5e5e5;
 }
 
 ::backdrop {
-    background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 dialog {
-    margin: auto;
-    border: none;
-    border-radius: 5px;
-    padding: 20px;
-    position: relative;
+  margin: auto;
+  border: none;
+  border-radius: 5px;
+  padding: 20px;
+  position: relative;
 }
 form {
-    display: flex;
-    flex-direction: column;
-    width: 500px;
-    align-items: center;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  align-items: center;
+  gap: 20px;
 }
 .close {
-    padding: 4px 6px;
-    position: absolute;
-    right: 20px;
-    border: none;
-    border-radius: 5px;
+  padding: 4px 6px;
+  position: absolute;
+  right: 20px;
+  border: none;
+  border-radius: 5px;
 }
 .form-row {
-    display: flex;
-    flex-direction: column;
-    font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
 }
 input[type='text'],
 input[type='number'] {
-    width: 300px;
-    height: 30px;
-    padding-left: 10px;
-    font-size: 15px;
-    border-radius: 5px;
-    border: none;
-    border: 1px solid black;
+  width: 300px;
+  height: 30px;
+  padding-left: 10px;
+  font-size: 15px;
+  border-radius: 5px;
+  border: none;
+  border: 1px solid black;
 }
 label {
-    font-size: 18px;
+  font-size: 18px;
 }
 button[type='submit'] {
-    width: 200px;
-    align-self: center;
-    background-color: skyblue;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 5px;
-    font-size: 18px;
+  width: 200px;
+  align-self: center;
+  background-color: skyblue;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 5px;
+  font-size: 18px;
 }
 button[type='submit']:hover {
-    background-color: rgb(77, 193, 238);
+  background-color: rgb(77, 193, 238);
 }
 input:invalid + span::after {
-    content: '&#10060;';
+  content: '&#10060;';
 }
