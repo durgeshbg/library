@@ -12,18 +12,21 @@
     <button class="add">Add Book</button>
     <dialog>
       <button class="close">&#10060;</button>
-      <form action="#" method="dialog">
+      <form action="#" method="dialog" novalidate>
         <div class="form-row">
           <label for="title">Title </label>
           <input type="text" name="title" id="title" autofocus required />
+          <div class="error"></div>
         </div>
         <div class="form-row">
           <label for="author">Author</label>
           <input type="text" name="author" id="author" required />
+          <div class="error"></div>
         </div>
         <div class="form-row">
           <label for="pages">No. of pages </label>
           <input type="number" name="pages" id="pages" required />
+          <div class="error"></div>
         </div>
         <div class="form-row">
           <label for="hasRead"
