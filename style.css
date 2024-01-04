@@ -140,3 +140,12 @@ button[type='submit']:hover {
 input:invalid + span::after {
   content: '&#10060;';
 }
+
+.error {
+  background-color: #f57373;
+  color: #434343;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 14px;
+}
