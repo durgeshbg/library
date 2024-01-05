@@ -30,6 +30,12 @@ function handleSubmit(e) {
   e.preventDefault();
 }
 
+function showError(error, elem) {
+  const target = elem.nextElementSibling;
+  target.textContent = error;
+  target.display = 'block';
+}
+
 function deleteBook(e) {
   let id = e.target.parentElement.id;
   Book.deleteBook(id);
@@ -62,6 +68,8 @@ function renderBooks() {
 }
 
 const dialog = document.querySelector('dialog');
+// For testing purpose
+dialog.showModal();
 document.querySelector('.add').addEventListener('click', () => dialog.showModal());
 document.querySelector('.close').addEventListener('click', () => dialog.close());
 
