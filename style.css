@@ -1,8 +1,8 @@
 :root {
   color: white;
   background-color: black;
-  --not-read: rgb(167, 212, 231);
-  --read: rgb(167, 231, 186);
+  --not-read: #2cbffe;
+  --read: #0de94f;
 }
 
 * {
@@ -21,7 +21,7 @@ h1 {
 
 .add {
   border: none;
-  background-color: rgb(92, 196, 238);
+  background-color: #d85626;
   padding: 10px;
   border-radius: 5px;
   margin: 1.2rem 1.5rem;
@@ -29,8 +29,8 @@ h1 {
   transition: font-size 300ms ease-in-out;
 }
 .add:hover {
-  background-color: skyblue;
-  font-size: 1.4rem;
+  background-color: #f04102;
+  font-size: 1.22em;
 }
 
 .container {
@@ -42,6 +42,7 @@ h1 {
 }
 
 .card {
+  color: black;
   background-color: var(--not-read);
   padding: 20px;
   text-align: center;
@@ -58,24 +59,34 @@ h1 {
   top: 10px;
 }
 .card .title {
-  font-size: 1.5rem;
+  font-size: 1.9rem;
   margin-bottom: 10px;
+  padding: 10px;
+  border-bottom: 1px dashed orange;
 }
 .card .author {
   font-style: italic;
   margin-bottom: 5px;
+  font-size: 1.2rem;
 }
 .card .author::before {
   content: 'by ';
   font-style: normal;
+  font-size: 0.9rem;
+  color: #626262;
 }
 .card .pages::after {
   content: ' pages';
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #626262;
 }
 .card button {
   border: none;
   padding: 8px;
   margin-top: 8px;
+  width: 2rem;
+  height: 2rem;
   border-radius: 5px;
   background-color: #fff;
 }
