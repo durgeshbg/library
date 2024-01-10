@@ -1,8 +1,5 @@
 class Book {
-  static myLibrary = [
-    { title: 'Title', author: 'Author', pages: 983, hasRead: true },
-    { title: 'Title', author: 'Author', pages: 983, hasRead: false },
-  ];
+  static myLibrary = [];
   constructor(title, author, pages, hasRead = false) {
     this.title = title;
     this.author = author;
