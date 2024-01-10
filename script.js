@@ -15,18 +15,25 @@ class Book {
 }
 
 function handleSubmit(e) {
-  let data = new FormData(e.target);
-  hasRead = data.get('hasRead') == 'true' ? true : false;
-  const book = new Book(
-    data.get('title'),
-    data.get('author'),
-    data.get('pages'),
-    hasRead
-  );
-  Book.addBookToLibrary(book);
-  e.target.reset();
-  dialog.close();
-  renderBooks();
+  const title = document.querySelector('#title');
+  const author = document.querySelector('#author');
+  const pages = document.querySelector('#pages');
+  const hasRead = document.querySelector('#hasRead').checked;
+
+  showError('', title);
+  showError('', author);
+  showError('', pages);
+
+  if (!title.checkValidity()) showError(title.validationMessage, title);
+  else if (!author.checkValidity()) showError(author.validationMessage, author);
+  else if (!pages.checkValidity()) showError(pages.validationMessage, pages);
+  else {
+    const book = new Book(title.value, author.value, pages.value, hasRead);
+    Book.addBookToLibrary(book);
+    e.target.reset();
+    dialog.close();
+    renderBooks();
+  }
   e.preventDefault();
 }
 
