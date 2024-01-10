@@ -1,5 +1,8 @@
 class Book {
-  static myLibrary = [];
+  static myLibrary = [
+    { title: 'Title', author: 'Author', pages: 983, hasRead: true },
+    { title: 'Title', author: 'Author', pages: 983, hasRead: false },
+  ];
   constructor(title, author, pages, hasRead = false) {
     this.title = title;
     this.author = author;
@@ -56,15 +59,15 @@ function renderBooks() {
     const card = document.createElement('div');
     card.classList.add('card');
     card.setAttribute('id', i);
-    card.innerHTML = "<button class='delete'>&#x1F5D1;</button>";
+    card.innerHTML = "<button class='delete'>&#10060;</button>";
     for (let key in book) {
       if (key == 'hasRead') {
-        let content = book[key] ? 'not read yet' : 'read';
+        let content = book[key] ? '&#128213;' : '&#128214;';
         card.innerHTML += `<button class=${key}>${content}</button>`;
         card.lastElementChild.addEventListener('click', (e) => {
           card.classList.toggle('read');
           book[key] = !book[key];
-          e.target.textContent = book[key] ? 'not read yet' : 'read';
+          e.target.innerHTML = book[key] ? '&#128213;' : '&#128214;';
         });
         if (book[key]) card.classList.toggle('read');
       } else card.innerHTML += `<div class="${key}">${book[key]}</div>`;
