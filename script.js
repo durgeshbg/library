@@ -75,8 +75,6 @@ function renderBooks() {
 }
 
 const dialog = document.querySelector('dialog');
-// For testing purpose
-dialog.showModal();
 document.querySelector('.add').addEventListener('click', () => dialog.showModal());
 document.querySelector('.close').addEventListener('click', () => dialog.close());
 
